@@ -1,49 +1,107 @@
 import React from 'react'
+import Slider from 'react-slick';
 import './pricing.css'
 
-import Image1 from '../../assets/price-1.svg'
-import Image2 from '../../assets/price-2.svg'
-import Image3 from '../../assets/price-3.svg'
+import Image1 from '../../assets/avatar-1.svg'
+import Image2 from '../../assets/avatar-2.svg'
+
+import { Pagination } from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+const data =[
+  {
+    id:1,
+    image:Image1,
+    title:"John Doe",
+    subtitle:"Product designer at Dribble",
+    comment:"I enjoy working with the theme and learn so much. you guys make the process fun and interesting. Good luck!"
+  },
+  {
+    id:2,
+    image:Image2,
+    title:"John Doe",
+    subtitle:"Product designer at Dribble",
+    comment:"I enjoy working with the theme and learn so much. you guys make the process fun and interesting. Good luck!"
+  },
+  {
+    id:2,
+    image:Image2,
+    title:"John Doe",
+    subtitle:"Product designer at Dribble",
+    comment:"I enjoy working with the theme and learn so much. you guys make the process fun and interesting. Good luck!"
+  },
+  {
+    id:2,
+    image:Image2,
+    title:"John Doe",
+    subtitle:"Product designer at Dribble",
+    comment:"I enjoy working with the theme and learn so much. you guys make the process fun and interesting. Good luck!"
+  },
+  {
+    id:2,
+    image:Image2,
+    title:"John Doe",
+    subtitle:"Product designer at Dribble",
+    comment:"I enjoy working with the theme and learn so much. you guys make the process fun and interesting. Good luck!"
+  },
+  {
+    id:2,
+    image:Image2,
+    title:"John Doe",
+    subtitle:"Product designer at Dribble",
+    comment:"I enjoy working with the theme and learn so much. you guys make the process fun and interesting. Good luck!"
+  },
+  {
+    id:2,
+    image:Image2,
+    title:"John Doe",
+    subtitle:"Product designer at Dribble",
+    comment:"I enjoy working with the theme and learn so much. you guys make the process fun and interesting. Good luck!"
+  },
+  
+
+]
 const Pricing = () => {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
   return (
-    <section className="pricing section container">
-      <h2 className="section_title">Pricing Plans</h2>
-      <div className="pricing_container grid">
-        
-        <div className="pricing_item">
-         
-          <img src={Image1} alt="" className="pricing_image" />
-          <h3 className="pricing_plan">Basic</h3>
-          <p className="pricing_title">A simple option but powerful to manage</p>
-          <p className="pricing_support">Email support</p>
-          <h3 className="price">
-            <em>$</em>9 <span>Month</span>
-          </h3>
-          <a href="#" className="btn">Get Started</a>
-        </div>
-        <div className="pricing_item  best">
-        <span className="badge">Recommended</span>
-          <img src={Image2} alt="" className="pricing_image" />
-          <h3 className="pricing_plan">Premium</h3>
-          <p className="pricing_title">Unlimited product including app integration and more features </p>
-          <p className="pricing_support">Mon-Fri support</p>
-          <h3 className="price">
-            <em>$</em>15 <span>Month</span>
-          </h3>
-          <a href="#" className="btn">Get Started</a>
-        </div>
-        <div className="pricing_item">
-          <img src={Image3} alt="" className="pricing_image" />
-          <h3 className="pricing_plan">Ultimate</h3>
-          <p className="pricing_title">A wise option for large companies and individuals</p>
-          <p className="pricing_support">24/7 support</p>
-          <h3 className="price">
-            <em>$</em>19 <span>Month</span>
-          </h3>
-          <a href="#" className="btn">Get Started</a>
-        </div>
-      </div>
-    </section>
+  
+    <section className="testimonials container section">
+    <h2 className="section_title">
+      Cleients $ Reviews
+    </h2>
+    <Swiper className="testimonials_container grid"
+     // install Swiper modules
+     modules={[Pagination]}
+     spaceBetween={30}
+     slidesPerView={1}
+     loop={true}
+     grabCursor={true}
+     pagination={{ clickable: true }}
+    >
+    { data.map(({id,image,title,subtitle,comment})=>{
+      return(
+        <SwiperSlide className="testimonial_item" key={id}>
+          <div className="thumb">
+            <img src={image} alt="" />
+          </div>
+          <h3 className="testimonial_title">{title}</h3>
+          <span className="subtitle">{subtitle}</span>
+          <div className="comment">{comment}</div>
+        </SwiperSlide>
+      )
+    })}
+    </Swiper>
+  </section>
   )
 }
 
