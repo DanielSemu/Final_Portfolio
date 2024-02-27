@@ -83,6 +83,9 @@
 }
 
 @media(max-width:500px){
+    .home{
+        margin-left: -50px;
+    }
     .intro img{
         width: 90px;
     }
