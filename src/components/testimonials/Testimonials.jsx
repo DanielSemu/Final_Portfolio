@@ -22,7 +22,8 @@ const experience =[
       id:2,
       img:lang4,
       title:"JAVA SCRIPT",
-      style:'shadow-yellow-500'
+      
+      style:'shadow-blue-600'
   },
   {
       id:3,
@@ -34,7 +35,7 @@ const experience =[
       id:4,
       img:lang6,
       title:"REACT",
-      style:'shadow-blue-600'
+      style:'shadow-yellow-500'
   },
   {
       id:5,
@@ -46,7 +47,7 @@ const experience =[
       id:6,
       img:lang2,
       title:"CSS",
-      style:'shadow-blue-500'
+      style:'shadow-pink-500'
   },
   {
       id:7,
@@ -58,13 +59,13 @@ const experience =[
       id:8,
       img:lang7,
       title:"TAILWIND CSS",
-      style:'shadow-blue-500'
+      style:'shadow-blue-600'
   },
   {
       id:9,
       img:lang9,
       title:"PHP",
-      style:'shadow-pink-500'
+      style:'shadow-yellow-500'
   },
   {
       id:10,
@@ -76,21 +77,28 @@ const experience =[
 ];
 const Testimonials = () => {
   return (
-    <section id='testimonials' className="testimonials container section">
-      <h1 className="section_title">Programing languages</h1>
-      <div className="services_container grid">
+    
+    <section className="Programing section container" id='testimonials'>
+      <div className="container-title">
+        <p className='title'>Programming Languages</p>
+  
+      </div>
+      <div className="grid_container grid">
         {
           experience.map(({id,img,title,style})=>{
             return(
-              <div className={`services_card1 ${style}`} key={id}>
-        <img src={img} alt="" className='service_image' />
-        <h1 className='service_title'>{title}</h1>
-        {/* <p className='service_description'>{description}</p> */}
-    </div>
+            <div key={id} className={`card ${style}`}>
+              <div className="image_container">
+                <img src={img} alt="" className="img" />
+              </div>
+              <div className="title_container">
+                <p className="title">{title}</p>
+              </div>
+            </div>
             )
           })
-        
-    }
+        }
+       
       </div>
     </section>
   )

@@ -45,6 +45,47 @@
 button{
   margin-top: 7rem;
 }
+@media(max-width:800px){
+  .contact_form_group{
+    font-size: 16px;
+  }
+  .contact_form_div input::placeholder{
+    font-size: 12px;
+  }
+}
+@media(max-width:700px){
+  .contact_form_group{
+    display: grid;
+    grid-template-columns: repeat(1 ,1fr);
+    row-gap: 0.5rem;
+  }
+  .contact_form_div{
+    margin-bottom: 0.875rem;
+    height: 2.75rem;
+  }
+  .contact_form_input::placeholder{
+    font-size: 13px;
+  }
+}
+@media(max-width:500px){
+  .contact_container{
+    display: grid;
+    grid-template-columns:repeat(1, 1fr);
+    column-gap: 1.875rem;
+    margin-left: -50px;
+  }
+  .contact_form_div{
+  
+    margin-bottom: 0.875rem;
+    height: 2.75rem;
+  }
+  .contact_info{
+    font-size: 14px;
+  }
+  .contact_title{
+    font-size: 16px;
+  }
+}
 
 
 
