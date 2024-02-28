@@ -4,6 +4,13 @@ import Image1 from '../../assets/service-1.svg'
 import Image2 from '../../assets/service-2.svg'
 import Image3 from '../../assets/android.svg'
 import ServiceList from './ServiceList'
+import { Pagination } from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
 const data=[
   {
     id:1,
@@ -28,18 +35,42 @@ const data=[
 
   }
 ]
+
 const Services = () => {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
   return (
-    <section className="services container section" id='services'>
-      <h1 className="section_title">Services</h1>
-      <div className="services_container grid">
-        {
-          data.map((item,i)=>{
-            return( <ServiceList key={i} id={item.id} title={item.title} description={item.description} image={item.image}/>)
-          })
-        
-    }
-      </div>
+    <section className="testimonials container section" id='services'>
+    <h2 className="section_title">
+      Services
+    </h2>
+    <Swiper className="testimonials_container grid"
+     // install Swiper modules
+     modules={[Pagination]}
+     spaceBetween={30}
+     slidesPerView={1}
+     loop={true}
+     grabCursor={true}
+     pagination={{ clickable: true }}
+    >
+    { data.map(({id,image,title,description})=>{
+      return(
+        <SwiperSlide className="testimonial_item" key={id}>
+          <div className="thumb">
+            <img src={image} alt="" />
+          </div>
+          <h3 className="testimonial_title">{title}</h3>
+          <span className="subtitle">{description}</span>
+          <br /><br />
+        </SwiperSlide>
+      )
+    })}
+    </Swiper>
     </section>
   )
 }
