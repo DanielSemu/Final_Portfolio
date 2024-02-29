@@ -1,0 +1,52 @@
+.grid_container{
+    background-color: #fff;
+}
+
+.container_title1 .title1{
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+}
+.card1{
+    padding: 5px;
+    margin: 10px;
+    position: relative;
+    background-color: black;
+    border-radius: 15px;
+}
+.title{
+    color: #fff;
+}
+.shadow-pink-500{
+    box-shadow: 3px 3px 5px #ec4899,
+    -3px 3px 5px #ec4899;
+}
+.shadow-yellow-500{
+    box-shadow: 3px 3px 5px #eab308,
+    -3px 3px 5px #eab308;
+}
+.shadow-orange-500{
+    box-shadow: 3px 3px 5px#f97316,
+    -3px 3px 5px #f97316;
+}
+.shadow-blue-600{
+    box-shadow: 3px 3px 5px #2563eb,
+    -3px 3px 5px #2563eb;
+}
+.shadow-green-500{
+    box-shadow: 3px 3px 5px #22c55e,
+    -3px 3px 5px #22c55e;
+}
+
+@media(max-width:500px){
+    .container_title1{
+        margin-left: -50px;
+    }
+    .container_title1 .title1{
+        font-size: 18px;
+    }
+    .Programing{
+        margin-bottom: 10rem;
+        margin-top: 2rem;
+    }
+}

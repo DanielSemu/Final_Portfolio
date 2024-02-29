@@ -1,9 +1,10 @@
 import React from 'react'
 import './services.css'
 import Image1 from '../../assets/service-1.svg'
+
 import Image2 from '../../assets/service-2.svg'
-import Image3 from '../../assets/android.svg'
-import ServiceList from './ServiceList'
+import Image3 from '../../assets/androidjpg.jpg'
+
 import { Pagination } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -37,16 +38,9 @@ const data=[
 ]
 
 const Services = () => {
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
   return (
     <section className="testimonials container section" id='services'>
-    <h2 className="section_title">
+    <h2 className="section_title1">
       Services
     </h2>
     <Swiper className="testimonials_container grid"
